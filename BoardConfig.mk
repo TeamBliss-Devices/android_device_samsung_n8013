@@ -19,10 +19,23 @@
 
 # Inline kernel building
 TARGET_KERNEL_SOURCE := kernel/samsung/smdk4412
-TARGET_KERNEL_CONFIG := cyanogenmod_n8013_defconfig
+TARGET_KERNEL_CONFIG := nb_n8013_defconfig
+BOARD_KERNEL_CMDLINE: androidboot.selinux=permissive
 
 # assert
 TARGET_OTA_ASSERT_DEVICE := c0,p4notewifi,p4notewifiww,n8013,GT-N8013,n8010,GT-N8010
 
-#Bluetooth
+# Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/n8013/bluetooth
+
+# BlissPop Configs
+TARGET_TC_ROM := 4.8-linaro
+TARGET_TC_KERNEL := 4.8-linaro
+BLISSIFY := true
+BLISS_O3 := true
+BLISS_STRICT := false
+BLISS_GRAPHITE := false
+BLISS_KRAIT := false
+BLISS_PIPE := false
+TARGET_GCC_VERSION_EXP := $(TARGET_TC_ROM)
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := $(TARGET_TC_KERNEL)
